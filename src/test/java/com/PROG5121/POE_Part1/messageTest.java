@@ -1,5 +1,11 @@
 package src.test.java.com.PROG5121.POE_Part1;
 
+**
+ * Handles user registration and login validation
+ * Author: Sharone Tebele
+ * Attribution for Regex: https://www.geeksforgeeks.org/regex-validation-south-african-phone-number/
+ */
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

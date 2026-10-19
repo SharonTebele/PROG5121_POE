@@ -1,4 +1,9 @@
-// PART 2 STARTS - Only after successful login
+// PART 2 STARTS
+**
+ * Handles user registration and login validation
+ * Author: Sharone Tebele
+ * Attribution for Regex: https://www.geeksforgeeks.org/regex-validation-south-african-phone-number/
+ */
 System.out.println("\nWelcome to QuickChat.");
 Message.loadMessages(); // loads JSON if it exists
 

@@ -1,5 +1,11 @@
 package com.mycompany.poe_part1;
 
+**
+ * Handles user registration and login validation
+ * Author: Sharone Tebele
+ * Attribution for Regex: https://www.geeksforgeeks.org/regex-validation-south-african-phone-number/
+ */
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

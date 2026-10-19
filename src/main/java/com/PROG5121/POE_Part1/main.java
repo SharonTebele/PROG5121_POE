@@ -1,5 +1,9 @@
 package src.main.java.com.PROG5121.POE_Part1;
-
+**
+ * Handles user registration and login validation
+ * Author: Sharone Tebele
+ * Attribution for Regex: https://www.geeksforgeeks.org/regex-validation-south-african-phone-number/
+ */
 import java.util.Scanner;
 
 public class main {
