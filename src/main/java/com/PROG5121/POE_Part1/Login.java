@@ -5,14 +5,14 @@ package src.main.java.com.PROG5121.POE_Part1;
  * Author: Sharone Tebele
  * Attribution for Regex: https://www.geeksforgeeks.org/regex-validation-south-african-phone-number/
  */
-public class login {
+public class Login {
     String username;
     String password;
     String cellNumber;
     String firstName;
     String lastName;
 
-    public login(String username, String password, String cellNumber, String firstName, String lastName){
+    public Login(String username, String password, String cellNumber, String firstName, String lastName){
         this.username = username;
         this.password = password;
         this.cellNumber = cellNumber;
@@ -20,7 +20,7 @@ public class login {
         this.lastName = lastName;
     }
 
-    public login() {}
+    public Login() {}
     /**checks username contains underscore and <=5 chars
      * return true if valid
      */
@@ -60,12 +60,12 @@ public class login {
         }
     return "User has been registered successfully.";
     }
-    public boolean loginUser(String enteredUsername, String enteredPassword){
+    public boolean LoginUser(String enteredUsername, String enteredPassword){
         return this.username.equals(enteredUsername) && this.password.equals(enteredPassword);
     }
     public String returnLoginStatus(String enteredUsername, String enteredPassword, String enteredlastName){
         {
-            if (loginUser(enteredUsername, enteredPassword)){
+            if (LoginUser(enteredUsername, enteredPassword)){
                 return "Welcome " + firstName + ", " + lastName + " it is great to see you again.";
             } else {
                 return "Username or password incorrect, please try a gain.";

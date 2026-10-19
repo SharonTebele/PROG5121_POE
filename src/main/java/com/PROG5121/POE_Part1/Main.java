@@ -31,12 +31,12 @@ public class main {
 
         System.out.println("\n=== LOGIN ===");
         System.out.print("Enter Username: ");
-        String loginU = sc.nextLine();
+        String LoginU = sc.nextLine();
         System.out.print("Enter Password: ");
-        String loginP = sc.nextLine();
-        System.out.println(user.returnLoginStatus(loginU, loginP));
+        String LoginP = sc.nextLine();
+        System.out.println(user.returnLoginStatus(LoginU, LoginP));
 
-        if (!user.loginUser(loginU, loginP)) return;
+        if (!user.loginUser(LoginU, LoginP)) return;
 
         // PART 2 STARTS
         System.out.println("\nWelcome to QuickChat.");
