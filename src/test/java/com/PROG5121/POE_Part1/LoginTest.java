@@ -1,57 +1,68 @@
-package com.mycompany.poe_part1;
+package src.main.java.com.PROG5121.POE_Part1;
 
-**
- * Handles user registration and login validation
- * Author: Sharone Tebele
- * Attribution for Regex: https://www.geeksforgeeks.org/regex-validation-south-african-phone-number/
- */
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginTest {
-    @Test 
-    public void testUsernameCorrect() { 
-        Login l = new Login(); 
-        l.username = "kyl_1"; 
-        assertTrue(l.checkUserName()); 
-    }
-    @Test 
-    public void testUsernameIncorrect() { 
-        Login l = new Login(); 
-        l.username = "kyle!!!!!!!"; 
-        assertFalse(l.checkUserName()); 
-    }
-    @Test 
-    public void testPasswordCorrect() { 
-        Login l = new Login(); 
-        l.password = "Ch&&sec@ke99!"; 
-        assertTrue(l.checkPasswordComplexity()); 
-    }
-    @Test 
-    public void testPasswordIncorrect() { 
-        Login l = new Login(); 
-        l.password = "password"; 
-        assertFalse(l.checkPasswordComplexity()); 
-    }
-    @Test public void testCellCorrect() { 
-        Login l = new Login(); 
-        l.cellNumber = "+27838970000"; 
-        assertTrue(l.checkCellPhoneNumber()); 
-    }
-    @Test public void testCellIncorrect() { 
-        Login l = new Login(); 
-        l.cellNumber = "08575975889"; 
-        assertFalse(l.checkCellPhoneNumber()); 
-    }
+
     @Test
-    public void testLoginSuccess() { 
-        Login l = new Login("kyl_1","Ch&&sec@ke99!","+27838970000","Kyle","Test"); 
-        assertTrue(l.loginUser("kyl_1","Ch&&sec@ke99!")); 
+    public void testUsernameCorrect() {
+        Login login = new Login();
+        login.username = "kyl_1";
+        assertTrue(login.checkUserName());
     }
-    @Test 
-    public void testLoginFail() { 
-        Login l = new Login("kyl_1","Ch&&sec@ke99!","+27838970000","Kyle","Test"); 
-        assertFalse(l.loginUser("kyl_1","wrong")); 
+
+    @Test
+    public void testUsernameIncorrect() {
+        Login login = new Login();
+        login.username = "kyle!!!!!!!";
+        assertFalse(login.checkUserName());
+    }
+
+    @Test
+    public void testPasswordCorrect() {
+        Login login = new Login();
+        login.password = "Ch&&sec@ke99!";
+        assertTrue(login.checkPasswordComplexity());
+    }
+
+    @Test
+    public void testPasswordIncorrect() {
+        Login login = new Login();
+        login.password = "password";
+        assertFalse(login.checkPasswordComplexity());
+    }
+
+    @Test
+    public void testCellCorrect() {
+        Login login = new Login();
+        login.cellNumber = "+27838970000";
+        assertTrue(login.checkCellNumber());
+    }
+
+    @Test
+    public void testCellIncorrect() {
+        Login login = new Login();
+        login.cellNumber = "08575975889";
+        assertFalse(login.checkCellNumber());
+    }
+
+    @Test
+    public void testLoginSuccess() {
+        Login login = new Login(
+                "kyl_1", "Ch&&sec@ke99!",
+                "+27838970000", "Kyle", "Test");
+
+        assertTrue(login.loginUser("kyl_1", "Ch&&sec@ke99!"));
+    }
+
+    @Test
+    public void testLoginFail() {
+        Login login = new Login(
+                "kyl_1", "Ch&&sec@ke99!",
+                "+27838970000", "Kyle", "Test");
+
+        assertFalse(login.loginUser("kyl_1", "wrong"));
     }
 }

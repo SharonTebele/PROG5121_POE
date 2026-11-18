@@ -1,52 +1,66 @@
-package src.test.java.com.PROG5121.POE_Part1;
+package src.main.java.com.PROG5121.POE_Part1;
 
-**
- * Handles user registration and login validation
- * Author: Sharone Tebele
- * Attribution for Regex: https://www.geeksforgeeks.org/regex-validation-south-african-phone-number/
- */
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MessageTest {
+
     @Test
     public void testMessageLengthSuccess() {
-        String msg = "Hi Mike, can you please come to the office to discuss?";
-        assertTrue(msg.length() < 250);
+        String message =
+                "Hi Mike, can you please come to the office to discuss?";
+
+        assertTrue(message.length() <= 250);
     }
+
     @Test
     public void testMessageLengthFailure() {
-        String longMsg = "a".repeat(300);
-        assertTrue(longMsg.length() > 250);
+        String longMessage = "a".repeat(300);
+        assertTrue(longMessage.length() > 250);
     }
+
     @Test
     public void testRecipientValid() {
-        Message m = new Message("+27718693002", "Test", 0);
-        assertEquals(1, m.checkRecipientCellTest());
+        Message message = new Message(
+                "+27718693002", "Test", 0);
+
+        assertEquals(1, message.checkRecipientCellTest());
     }
+
     @Test
     public void testRecipientInvalid() {
-        Message m = new Message("08575975889", "Test", 0);
-        assertEquals(0, m.checkRecipientCellTest());
+        Message message = new Message(
+                "08575975889", "Test", 0);
+
+        assertEquals(0, message.checkRecipientCellTest());
     }
+
     @Test
     public void testMessageHash() {
-        Message m = new Message("+27718693002", "Hi Mike, can you please come", 0);
-        m.messageID = "0011223344";
-        String hash = m.createMessageHash();
-        // Expected: 00:0:HICOME
+        Message message = new Message(
+                "+27718693002", "Hi Mike, can you please come", 0);
+
+        message.messageID = "0011223344";
+
+        String hash = message.createMessageHash();
+
         assertEquals("00:0:HICOME", hash);
     }
+
     @Test
     public void testMessageIDLength() {
-        Message m = new Message("+27718693002", "Test", 0);
-        assertTrue(m.checkMessageID());
+        Message message = new Message(
+                "+27718693002", "Test", 0);
+
+        assertTrue(message.checkMessageID());
     }
+
     @Test
     public void testTotalMessages() {
         Message.totalMessages = 2;
-        Message m = new Message();
-        assertEquals(2, m.returnTotalMessages());
+        Message message = new Message();
+
+        assertEquals(2, message.returnTotalMessages());
     }
 }
